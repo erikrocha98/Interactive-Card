@@ -1,0 +1,190 @@
+/* Configurações mais gerais e globais: */
+
+#bodyContainer {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+#background {
+    background: linear-gradient(hsl(278, 94%, 30%), hsl(278, 68%, 11%)); /* Mateus: o gradiente é feito com esse comando */
+    height: 100vh; /* Mateus: esse vh é pra se ajustar a tela do usuário, nesse caso, à 100% da tela */
+    width: 550px;
+}
+.textoCard {
+    color: white; /* Mateus: especificação geral de cor pra todos elementos de texto dos cartões */
+    
+}
+
+#cardFrontName, #cardFrontNumber, #cardFrontDate, #cardBackNumber { 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*----------------------------------------------*/
+/* Configurações da parte da frente do cartão: */
+
+#cardFront {
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+    position: absolute;
+}
+#cardLogo {
+    position: relative;
+    top: 70px;
+    left: 80px;
+    z-index: 2;
+}
+#cardFrontNumber {
+    position: relative;
+    top: 100px;
+    left: 80px;
+    z-index: 2; /* Mateus: com z-index = 2, o texto tá sendo jogado pra frente do cartão, que tá com z-index = 1 */
+    font-size: 30px;
+}
+#cardFrontName {
+    position: relative;
+    top: 130px;
+    left: 80px;
+    z-index: 2;
+    max-width: 160px;
+    font-weight: 300;
+    font-size: 18px;
+}
+#cardFrontDateMM {
+    position: relative;
+    top: 110px;
+    left: 380px;
+    z-index: 2;
+    font-weight: 300;
+    font-size: 18px;
+    
+}
+#cardFrontDateYY{
+    position: relative;
+    top: 87px;
+    left: 410px;
+    z-index: 2;
+    font-weight: 300;
+    font-size: 18px;
+}
+#bar{
+    position: relative;
+    top: 62px;
+    left: 403px;
+    z-index: 2;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+
+/*----------------------------------------------*/
+/* Configurações da parte de trás do cartão: */
+.date{
+    display: inline;
+}
+#cardBack {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    z-index: 1;
+}
+#cardBackNumber {
+    position: relative;
+    top: 120px;
+    left: 350px;
+    z-index: 2;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/*----------------------------------------------*/
+/* Configurações das descrições das boxes do formulário: */
+
+.fieldDescription {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 5px; /* Mateus: isso aqui tá dando o espaçamento na parte de baixo entre a descrição do campo e a box em si */
+}
+#fieldDescriptionItem3 {
+    width: 200px;
+}
+
+/*----------------------------------------------*/
+/* Configurações gerais e de itens do formulário (agrupamento da descrição da box + box)*/
+
+#formulario {
+    
+    position: absolute;
+    top: 31%;
+    left: 55%;
+}
+.formularioItem1, .formularioItem2, .formularioItem3, .formularioItem4, .formularioItem5 {
+    margin-bottom: 30px; /* Mateus: espaçamento na parte de baixo de cada item do formulário, obs: os formularioItemX estão considerando descrição da box e a box com um só item */
+}
+.formularioItem3, .formularioItem4 {
+    /* Mateus: é essa parte aqui em baixo que tá deixando os itens 3 (campos MM/YY) e 4 (CVC) do forms na mesma linha */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.formularioItem5 {
+    height: 40px;
+    width: 480px;
+    border: 1px solid hsl(278, 68%, 11%);
+    background-color: hsl(278, 68%, 11%);
+    border-radius: 10px; /* Mateus: arredondamento das bordas das boxes do formulário */
+    padding: 10px;
+    text-align: center; /* Mateus: centralização horizontal do texto na box */
+    line-height: 40px; /* Mateus: line-height é pra deixar o texto alinhado verticalmente na box */
+}
+.formularioItem5Link {
+    color: white;
+    text-decoration: none; /* Mateus: remove o underline do link */
+}
+
+/*----------------------------------------------*/
+/* Configurações gerais e específicas das 3 boxes do formulário: */
+
+.textoBoxSmaller, .textoBoxMedium, .textoBox {
+    color: hsl(278, 68%, 11%); /* Mateus: cor do texto (campo do forms) quando a pessoa está digitando e/ou já tem algo escrito por ela lá */
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+
+    border-radius: 10px;
+    border: 1px solid hsl(270, 3%, 87%);
+    padding: 10px;
+
+    height: 30px;
+    line-height: 30px;
+}
+.textoBoxSmaller {
+    display: inline-block; /* Mateus: deixa as duas boxes da parte de data alinhas na mesma linha */
+    width: 60px;
+}
+.textoBoxMedium {
+    width: 255px;
+}
+.textoBox {
+    width: 480px;
+}
+
+/*----------------------------------------------*/
+/* Configurações gerais das 3 boxes do formulário quando não estão preenchidas: */
+
+.textoBoxSmaller::placeholder, .textoBoxMedium::placeholder, .textoBox::placeholder {
+    color: hsl(270, 3%, 87%); /* Mateus: cor do texto (campo do forms) quando a pessoa não digitou nada e tá só o exemplo lá */
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}

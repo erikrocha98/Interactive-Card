@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel = "stylesheet" href = "/styles.css">
+    <script src="/script.js"></script>
+    <!--Abaixo oS linkS para uso das fontes customizadas:-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    
+  </head>
+
+  <!---------------------------------------------------------------------------------------->
+
+  <body id="bodyContainer">
+
+    <section id="background">
+      <!--<img src="./images/bg-main-desktop.png">-->
+    </section>
+    <!------------------------------------------------------------>
+    <section id="cardFront">
+      <img src="./bg-card-front.png" id="cardFront">
+      <img src="./card-logo.svg" id="cardLogo">
+      <div class="textoCard">
+        <div id="cardFrontNumber"> 0000 0000 0000 0000 </div>
+        <div id="cardFrontName"> Jane Appleseed </div>
+        <div id="cardFrontDateMM"> 00 </div>
+        <div id="cardFrontDateYY">00</div>
+        <div id="bar">/</div>
+      </div>
+    </section>
+    <!------------------------------------------------------------>
+    <section id="cardBack">
+      <img src="./bg-card-back.png" id="cardBack">
+      <div class="textoCard" id="cardBackNumber"> 000 </div>
+    </section>
+    <!------------------------------------------------------------>
+    <section id="formulario">
+      <div id="textoFormulario">
+
+        <div class="formularioItem1">
+          <div class="fieldDescription"> CARDHOLDER NAME </div>
+          <input type="text" id="inputname" onmouseover="cantbeblank1()" onmouseout="ChangeOriginalColor(this)"  oninput="fillStringData(this)" class="textoBox" placeholder="e.g. Jane Appleseed">
+          <p id="erroname"></p>
+        </div>
+        
+
+        <div class="formularioItem2">
+          <div class="fieldDescription"> CARD NUMBER </div>
+          <input type="text" id="inputnumber" onmouseover="cantbeblank2()" onmouseout="ChangeOriginalColor(this)" oninput="fillIntData(this),filled(this)" class="textoBox" placeholder="e.g. 1234 5678 9123 0000">
+          <p id="erronumber"></p>
+        </div>
+        
+
+        <div class="formularioItem3">
+          <div class="fieldDescription" id="fieldDescriptionItem3"> EXP. DATE (MM/YY) </div>
+          <div class="date">
+            <input type="number" id="inputMM" onmouseover="cantbeblank()" onmouseout="ChangeOriginalColor(this)" oninput="fillIntData1(this), filled(this)"  class="textoBoxSmaller" placeholder="MM">
+          </div>
+          <div class="date">
+            <input type="number" id="inputYY" onmouseover="cantbeblank()" onmouseout="ChangeOriginalColor(this)"  oninput="fillIntData2(this), filled(this)"  class="textoBoxSmaller" placeholder="YY">
+          </div>
+          <p id="erroMM"></p>
+          
+        </div>
+
+        <div class="formularioItem4">
+          <div class="fieldDescription"> CVC </div>
+          <input type="number" id="inputcvc" onmouseover="cantbeblank3()" onmouseout="ChangeOriginalColor(this)" oninput="fillIntData3(this)" class="textoBoxMedium" placeholder="e.g. 123">
+          <p id="errocvc"></p>
+        </div>
+        
+
+        <!--Mateus: Acredito que para alterar a pag ao apertar o botao confirm, seria mudar o target abaixo-->
+        <div class="formularioItem5"> 
+          <a class="formularioItem5Link", href = "#", target = "self"> Confirm </a>
+        </div>
+
+      </div>
+    </section>
+    <!------------------------------------------------------------>
+    <!-- Completed state start -->
+
+    <!-- Thank you!
+    We've added your card details
+    Continue
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+  </body>
+
+</html>
